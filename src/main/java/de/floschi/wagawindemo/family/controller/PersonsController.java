@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("persons")
-public class PersonController {
+public class PersonsController {
 
     @Autowired
     private ParentSummaryService parentSummaryService;
