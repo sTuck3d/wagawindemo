@@ -21,7 +21,6 @@ dependencies {
     //implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-r2dbc'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
-    implementation 'io.r2dbc:r2dbc-pool'
     compileOnly 'org.projectlombok:lombok'
 
     runtimeOnly 'mysql:mysql-connector-java'
