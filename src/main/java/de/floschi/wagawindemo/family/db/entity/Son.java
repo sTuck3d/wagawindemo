@@ -1,9 +1,10 @@
 package de.floschi.wagawindemo.family.db.entity;
 
 import lombok.Data;
-import org.springframework.data.relational.core.mapping.Table;
 
-@Table("son")
+import javax.persistence.Table;
+
+@Table(name = "son")
 @Data
 public class Son extends Child {
 

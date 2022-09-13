@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("child")
@@ -18,12 +17,12 @@ public class ChildController {
     private ChildService childService;
 
     @GetMapping("/info/{childId}")
-    public Mono<ChildInfoResponse> getChildInfo(@PathVariable Long childId) {
+    public ChildInfoResponse getChildInfo(@PathVariable Long childId) {
         return childService.loadChildInfo(childId);
     }
 
     @GetMapping("/color/{childId}")
-    public Mono<ChildColorResponse> getChildFavColor(@PathVariable Long childId) {
+    public ChildColorResponse getChildFavColor(@PathVariable Long childId) {
         return childService.loadChildFavColor(childId);
     }
 

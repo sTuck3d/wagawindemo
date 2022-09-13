@@ -1,14 +1,15 @@
 package de.floschi.wagawindemo.family.db.entity;
 
 import lombok.Data;
-import org.springframework.data.relational.core.mapping.Column;
-import org.springframework.data.relational.core.mapping.Table;
 
-@Table("daughter")
+import javax.persistence.Column;
+import javax.persistence.Table;
+
+@Table(name = "daughter")
 @Data
 public class Daughter extends Child { // TODO: Extenden bei DB eine gute Idee?
 
-    @Column("haircolor")
+    @Column(name = "haircolor")
     private String hairColor;
 
 }

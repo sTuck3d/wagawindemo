@@ -2,9 +2,10 @@ package de.floschi.wagawindemo.family.db.entity;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
 
-@Table("child")
+import javax.persistence.Table;
+
+@Table(name = "child")
 @Data
 public class Child {
 

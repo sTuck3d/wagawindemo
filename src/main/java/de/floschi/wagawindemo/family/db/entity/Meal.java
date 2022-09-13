@@ -2,11 +2,11 @@ package de.floschi.wagawindemo.family.db.entity;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
 
+import javax.persistence.Table;
 import java.time.LocalDate;
 
-@Table("meal")
+@Table(name = "meal")
 @Data
 public class Meal {
 

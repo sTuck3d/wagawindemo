@@ -1,8 +1,8 @@
 package de.floschi.wagawindemo.family.db.entity;
 
-import org.springframework.data.relational.core.mapping.Table;
+import javax.persistence.Table;
 
-@Table("parentsummary")
+@Table(name = "parentsummary")
 public class ParentSummary {
 
     private Long amountOfPersons;
