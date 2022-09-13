@@ -3,14 +3,15 @@ package de.floschi.wagawindemo.family.db.entity;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Table(name = "person")
 @Data
 public class Person {
 
     @Id
+    @GeneratedValue
     @Column(name = "person_id")
     private Long personId;
 
@@ -20,6 +21,10 @@ public class Person {
     @Column(name = "age")
     private int age;
 
-    @Column(name = "house_id")
-    private Long houseId;
+    @OneToOne
+    @JoinColumn(name = "house_id", referencedColumnName = "house_id")
+    private House house;
+
+    @OneToMany(mappedBy = "parent")
+    private List<Child> children;
 }

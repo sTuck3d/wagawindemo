@@ -4,14 +4,14 @@ import de.floschi.wagawindemo.family.data.HouseType;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Table(name = "House")
 @Data
 public class House {
 
     @Id
+    @GeneratedValue
     @Column(name = "house_id")
     private Long houseId;
 
@@ -22,5 +22,9 @@ public class House {
     private String zipCode;
 
     @Column(name = "type")
+    @Enumerated(EnumType.STRING)
     private HouseType type; // TODO: Best practice enum in DB speichern?
+
+    @OneToOne(mappedBy = "house")
+    private Person person;
 }
