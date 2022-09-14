@@ -1,13 +1,19 @@
 package de.floschi.wagawindemo.family.db.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
+@Entity
 @Table(name = "person")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Person {
 
     @Id

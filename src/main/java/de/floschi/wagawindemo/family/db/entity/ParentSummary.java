@@ -1,11 +1,14 @@
 package de.floschi.wagawindemo.family.db.entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
+@Entity
 @Table(name = "parentsummary")
+@AllArgsConstructor
+@NoArgsConstructor
 public class ParentSummary {
 
     @Id

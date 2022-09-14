@@ -1,13 +1,19 @@
 package de.floschi.wagawindemo.family.db.entity;
 
 import de.floschi.wagawindemo.family.data.HouseType;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@Entity
 @Table(name = "House")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class House {
 
     @Id
@@ -23,7 +29,7 @@ public class House {
 
     @Column(name = "type")
     @Enumerated(EnumType.STRING)
-    private HouseType type; // TODO: Best practice enum in DB speichern?
+    private HouseType type;
 
     @OneToOne(mappedBy = "house")
     private Person person;

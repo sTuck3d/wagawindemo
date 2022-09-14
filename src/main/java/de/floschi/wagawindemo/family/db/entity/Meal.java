@@ -1,13 +1,17 @@
 package de.floschi.wagawindemo.family.db.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Set;
 
+@Entity
 @Table(name = "meal")
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class Meal {
 
@@ -19,7 +23,6 @@ public class Meal {
     private String name;
 
     @Column(name = "invented")
-    @Temporal(TemporalType.DATE)
     private LocalDate invented;
 
     @ManyToMany(mappedBy = "favMeals")

@@ -1,12 +1,16 @@
 package de.floschi.wagawindemo.family.db.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.springframework.data.annotation.Id;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
 
+@Entity
 @Table(name = "child")
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class Child {
 
