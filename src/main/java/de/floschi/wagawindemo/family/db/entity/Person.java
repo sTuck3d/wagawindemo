@@ -17,7 +17,7 @@ import java.util.List;
 public class Person {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "person_id")
     private Long personId;
 
@@ -27,7 +27,7 @@ public class Person {
     @Column(name = "age")
     private int age;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "house_id", referencedColumnName = "house_id")
     private House house;
 

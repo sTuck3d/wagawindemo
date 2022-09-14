@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class ParentSummary {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "parent_summary_id")
     private Long parentSummaryId;
 

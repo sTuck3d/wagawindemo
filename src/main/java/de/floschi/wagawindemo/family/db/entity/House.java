@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "House")
+@Table(name = "house")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,7 +17,7 @@ import javax.persistence.*;
 public class House {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "house_id")
     private Long houseId;
 
@@ -31,6 +31,6 @@ public class House {
     @Enumerated(EnumType.STRING)
     private HouseType type;
 
-    @OneToOne(mappedBy = "house")
+    @OneToOne(mappedBy = "house", cascade = CascadeType.ALL)
     private Person person;
 }

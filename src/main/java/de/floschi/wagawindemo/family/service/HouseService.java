@@ -8,6 +8,10 @@ import de.floschi.wagawindemo.family.db.entity.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
+import static javax.transaction.Transactional.TxType.REQUIRES_NEW;
+
 @Service
 public class HouseService {
 
@@ -23,6 +27,7 @@ public class HouseService {
                 .orElse(null);
     }
 
+    @Transactional(REQUIRES_NEW)
     public HouseDto saveHouse(HouseDto houseDto, Person personEntity) {
         var newHouse = houseDtoMapper.toHouseEntity(houseDto, personEntity);
         var savedHouse = houseRepo.save(newHouse);
