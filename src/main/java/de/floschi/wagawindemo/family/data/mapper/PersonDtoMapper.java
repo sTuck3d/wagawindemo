@@ -3,24 +3,15 @@ package de.floschi.wagawindemo.family.data.mapper;
 import de.floschi.wagawindemo.family.data.PersonDto;
 import de.floschi.wagawindemo.family.data.requests.PersonRequestDto;
 import de.floschi.wagawindemo.family.db.entity.Person;
-import org.springframework.stereotype.Component;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
-@Component
-public class PersonDtoMapper {
+@Mapper(componentModel = "spring")
+public abstract class PersonDtoMapper {
 
-    public PersonDto personToPersonDto(Person person) {
-        return PersonDto.builder()
-                .id(person.getPersonId())
-                .age(person.getAge())
-                .name(person.getName())
-                .build();
-    }
+    @Mapping(source = "personId", target = "id")
+    public abstract PersonDto personToPersonDto(Person person);
 
-    public Person personRequestDtoToPerson(PersonRequestDto personRequest) {
-        return Person.builder()
-                .age(personRequest.getAge())
-                .name(personRequest.getName())
-                .build();
-    }
+    public abstract Person personRequestDtoToPerson(PersonRequestDto personRequest);
 
 }

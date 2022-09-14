@@ -24,7 +24,7 @@ public class HouseService {
     }
 
     public HouseDto saveHouse(HouseDto houseDto, Person personEntity) {
-        var newHouse = houseDtoMapper.toHouse(houseDto, personEntity);
+        var newHouse = houseDtoMapper.toHouseEntity(houseDto, personEntity);
         var savedHouse = houseRepo.save(newHouse);
         return houseDtoMapper.toHouseDto(savedHouse);
     }

@@ -4,12 +4,12 @@ import de.floschi.wagawindemo.family.data.HouseDto;
 import de.floschi.wagawindemo.family.data.response.HouseResponse;
 import de.floschi.wagawindemo.family.db.entity.House;
 import de.floschi.wagawindemo.family.db.entity.Person;
-import org.springframework.stereotype.Component;
+import org.mapstruct.Mapper;
 
-@Component
-public class HouseDtoMapper {
+@Mapper(componentModel = "spring")
+public abstract class HouseDtoMapper {
 
-    public House toHouse(HouseDto houseDto, Person personEntity) {
+    public House toHouseEntity(HouseDto houseDto, Person personEntity) {
         return House.builder()
                 .address(houseDto.getAddress())
                 .zipCode(houseDto.getZipCode())
@@ -18,22 +18,8 @@ public class HouseDtoMapper {
                 .build();
     }
 
-    public HouseDto toHouseDto(House house) {
-        return HouseDto.builder()
-                .id(house.getHouseId())
-                .address(house.getAddress())
-                .zipCode(house.getZipCode())
-                .type(house.getType())
-                .build();
-    }
+    public abstract HouseDto toHouseDto(House house);
 
-    public HouseResponse toHouseResponse(House house) {
-        return HouseResponse.builder()
-                .id(house.getHouseId())
-                .address(house.getAddress())
-                .zipCode(house.getZipCode())
-                .type(house.getType())
-                .build();
-    }
+    public abstract HouseResponse toHouseResponse(House house);
 
 }
