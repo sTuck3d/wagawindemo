@@ -1,16 +1,14 @@
 package de.floschi.wagawindemo.family.db.entity;
 
 import de.floschi.wagawindemo.family.data.HouseType;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "house")
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder

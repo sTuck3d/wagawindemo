@@ -1,9 +1,6 @@
 package de.floschi.wagawindemo.family.db.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,6 +8,8 @@ import java.util.List;
 @Entity
 @Table(name = "person")
 @Data
+@EqualsAndHashCode(exclude = {"children", "house"})
+@ToString(exclude = {"children", "house"})
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

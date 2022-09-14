@@ -1,8 +1,6 @@
 package de.floschi.wagawindemo.family.db.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -12,6 +10,8 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@EqualsAndHashCode(exclude = "favMeals")
+@ToString(exclude = "favmeals")
 public class Child {
 
     @Id
