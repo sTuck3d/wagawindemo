@@ -1,5 +1,6 @@
 package de.floschi.wagawindemo.family.db.entity;
 
+import de.floschi.wagawindemo.family.data.ChildType;
 import lombok.*;
 
 import javax.persistence.*;
@@ -27,6 +28,13 @@ public class Child {
 
     @Column(name = "age")
     private int age;
+
+    @Column(name = "type")
+    @Enumerated(EnumType.STRING)
+    private ChildType type;
+
+    @Column(name = "favColor")
+    private String favColor;
 
     @ManyToMany
     @JoinTable(
