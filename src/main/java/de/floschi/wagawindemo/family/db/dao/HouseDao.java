@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface HouseRepo extends JpaRepository<House, Long> {
+public interface HouseDao extends JpaRepository<House, Long> {
 
     @Query("SELECT h FROM House h WHERE h.person.personId= ?1")
     Optional<House> loadAllByPersonId(Long personId);

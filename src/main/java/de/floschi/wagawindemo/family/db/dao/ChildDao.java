@@ -1,9 +1,9 @@
 package de.floschi.wagawindemo.family.db.dao;
 
 import de.floschi.wagawindemo.family.db.entity.Child;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ChildRepo extends CrudRepository<Child, Long> {
+public interface ChildDao extends JpaRepository<Child, Long> {
 }

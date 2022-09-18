@@ -1,14 +1,12 @@
 package de.floschi.wagawindemo.family.db.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "parentsummary")
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 public class ParentSummary {
 
     @Id
@@ -17,8 +15,8 @@ public class ParentSummary {
     private Long parentSummaryId;
 
     @Column(name = "amount_of_persons")
-    private Long amountOfPersons;
+    private int amountOfPersons;
 
-    @Column(name = "amount_of_children")
-    private Long amountOfChildren;
+    @Column(name = "amount_of_children", unique = true)
+    private int amountOfChildren;
 }
