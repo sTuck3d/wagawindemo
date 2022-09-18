@@ -1,4 +1,4 @@
-package de.floschi.wagawindemo;
+package de.floschi.wagawindemo.family;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
