@@ -11,7 +11,7 @@ public class ParentSummary {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "parent_summary_id")
+    @Column(name = "parent_summary_id", unique = true, nullable = false)
     private Long parentSummaryId;
 
     @Column(name = "amount_of_persons")

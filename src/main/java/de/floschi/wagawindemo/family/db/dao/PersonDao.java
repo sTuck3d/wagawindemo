@@ -8,10 +8,10 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PersonDao extends JpaRepository<Person, Long> {
 
-    @Query("select max(persons.children) from Person persons")
+    @Query("select max(size(persons.children)) from Person persons")
     int getMaxNumberOfChildren();
 
-    @Query("select count(persons) from Person persons where count(persons.children) = ?1")
+    @Query("select count(persons) from Person persons where size(persons.children) = ?1")
     int getNumberOfPersonsWithNumber(int numberOfChildren);
 
 }

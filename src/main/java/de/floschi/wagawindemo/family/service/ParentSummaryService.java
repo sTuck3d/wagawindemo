@@ -36,7 +36,7 @@ public class ParentSummaryService {
     @Transactional
     public void calcParentSummary() {
         int maxNumberOfChildren = personDao.getMaxNumberOfChildren();
-        for (int amountOfChildren = 0; amountOfChildren < maxNumberOfChildren; amountOfChildren++) {
+        for (int amountOfChildren = 0; amountOfChildren <= maxNumberOfChildren; amountOfChildren++) {
             loadAndSaveParentSummary(amountOfChildren);
         }
     }
@@ -51,7 +51,7 @@ public class ParentSummaryService {
         Optional<ParentSummary> personWithNChildren =
                 parentSummaryDao.findByAmountOfChildren(amountOfChildren);
         if (personWithNChildren.isPresent()) {
-            // There is an entry in the db, that already saves this amount of children,
+            // There is an entry in the db, that already contains this amount of children,
             // so just update the amount of persons.
             var existingParentSummary = personWithNChildren.get();
             existingParentSummary.setAmountOfPersons(amountOfPersons);

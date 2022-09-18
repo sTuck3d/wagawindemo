@@ -29,7 +29,6 @@ class ParentSummaryServiceTest {
         var parentSummary = parentSummaryResponse.getParentSummary();
         // The parentSummary should look like this: [1,2,3]
         assertNotNull(parentSummary);
-        // TODO: What about zero children?
         assertEquals(3, parentSummary.size());
         assertEquals(1, parentSummary.get(0));
         assertEquals(2, parentSummary.get(1));
@@ -58,9 +57,24 @@ class ParentSummaryServiceTest {
     }
 
     @Test
-    @Sql(scripts = {"/calc-parent-summary-test-data.sql"})
+    @Sql(scripts = {"/calc-parent-summary-overrides-test-data.sql"})
     void calcParentSummary_overrides() {
+        parentSummaryService.calcParentSummary();
 
+        // There should be four entries in the parent summary table now:
+        // (amountOfPersons, amountOfChildren) [0,0], [0,1] and [1,2]
+        var parentSummaries = parentSummaryDao.findAll();
+        assertNotNull(parentSummaries);
+        assertEquals(3, parentSummaries.size());
+        var firstEntry = parentSummaries.get(0);
+        assertEquals(0, firstEntry.getAmountOfPersons());
+        assertEquals(0, firstEntry.getAmountOfChildren());
+        var secondEntry = parentSummaries.get(1);
+        assertEquals(0, secondEntry.getAmountOfPersons());
+        assertEquals(1, secondEntry.getAmountOfChildren());
+        var thirdEntry = parentSummaries.get(2);
+        assertEquals(1, thirdEntry.getAmountOfPersons());
+        assertEquals(2, thirdEntry.getAmountOfChildren());
 
     }
 }
