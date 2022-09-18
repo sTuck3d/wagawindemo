@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 @SpringBootTest
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
-@Sql(scripts = {"/child-color-test-data.sql"})
+@Sql(scripts = {"/testdata/child-color-test-data.sql"})
 class ChildColorServiceTest {
 
     @Autowired

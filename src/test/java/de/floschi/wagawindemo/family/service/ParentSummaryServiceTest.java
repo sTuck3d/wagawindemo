@@ -21,7 +21,7 @@ class ParentSummaryServiceTest {
     private ParentSummaryDao parentSummaryDao;
 
     @Test
-    @Sql(scripts = {"/parent-summary-test-data.sql"})
+    @Sql(scripts = {"/testdata/parent-summary-test-data.sql"})
     void loadParentSummary() {
         var parentSummaryResponse = parentSummaryService.loadParentSummary();
 
@@ -36,7 +36,7 @@ class ParentSummaryServiceTest {
     }
 
     @Test
-    @Sql(scripts = {"/calc-parent-summary-test-data.sql"})
+    @Sql(scripts = {"/testdata/calc-parent-summary-test-data.sql"})
     void calcParentSummary() {
         parentSummaryService.calcParentSummary();
 
@@ -57,7 +57,7 @@ class ParentSummaryServiceTest {
     }
 
     @Test
-    @Sql(scripts = {"/calc-parent-summary-overrides-test-data.sql"})
+    @Sql(scripts = {"/testdata/calc-parent-summary-overrides-test-data.sql"})
     void calcParentSummary_overrides() {
         parentSummaryService.calcParentSummary();
 
