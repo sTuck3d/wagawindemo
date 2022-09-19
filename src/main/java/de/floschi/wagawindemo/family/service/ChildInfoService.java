@@ -6,6 +6,7 @@ import de.floschi.wagawindemo.family.db.dao.ChildDao;
 import de.floschi.wagawindemo.family.db.entity.Child;
 import de.floschi.wagawindemo.family.util.LogMethod;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +22,9 @@ public class ChildInfoService {
 
     @LogMethod
     @Transactional
+    @Cacheable(
+            value = "childInfoCache",
+            key = "#id")
     public ChildInfoResponse loadChildInfo(Long id) {
         Optional<Child> child = childDao.findById(id);
         return child.map(c -> childDtoMapper.childToChildInfoResponse(c))

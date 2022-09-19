@@ -4,9 +4,11 @@ import de.floschi.wagawindemo.family.data.HouseType;
 import lombok.Builder;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
 @Builder
-public class HouseResponse {
+public class HouseResponse implements Serializable {
 
     private long id;
     private String address;
