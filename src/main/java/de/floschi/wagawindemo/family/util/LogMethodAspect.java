@@ -16,42 +16,41 @@ public class LogMethodAspect {
     @Around("@annotation(LogMethod)")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         Logger logger = LoggerFactory.getLogger(joinPoint.getTarget().getClass());
-        var methodSignature = joinPoint.getSignature().getName() + "()";
 
-        logStart(logger, methodSignature);
-        logParameters(logger, joinPoint);
+        logStart(logger, joinPoint);
 
         long start = System.currentTimeMillis();
         Object result = joinPoint.proceed();
         long executionTime = System.currentTimeMillis() - start;
 
-        logEndAndDuration(logger, methodSignature, executionTime);
-        logReturnValue(logger, methodSignature, joinPoint, result);
+        logEnd(logger, joinPoint, executionTime, result);
 
         return result;
     }
 
 
-    private void logStart(Logger logger, String methodSignature) {
-        logger.trace("{} started.", methodSignature);
-    }
-
-    private void logEndAndDuration(Logger logger, String methodSignature, long executiontime) {
-        logger.trace("{} finished and took {} ms.", methodSignature, executiontime);
-    }
-
-    private void logReturnValue(Logger logger, String methodSignature, ProceedingJoinPoint joinPoint, Object result) {
-        String completeSignature = joinPoint.getStaticPart().getSignature().toLongString();
-        if (!completeSignature.contains("void")) {
-            logger.trace("{} returned {}", methodSignature, result);
-        }
-    }
-
-    private void logParameters(Logger logger, ProceedingJoinPoint jointPoint) {
-        Object[] args = jointPoint.getArgs();
+    private void logStart(Logger logger, ProceedingJoinPoint joinPoint) {
+        String methodSignature = getMethodSignature(joinPoint);
+        Object[] args = joinPoint.getArgs();
         if (args.length > 0) {
             var allParameters = StringUtils.joinWith(" | ", args);
-            logger.trace("The parameters are: {}", allParameters);
+            logger.trace("{} started with parameters {}", methodSignature, allParameters);
+            return;
         }
+        logger.trace("{} started", methodSignature);
+    }
+
+    private void logEnd(Logger logger, ProceedingJoinPoint joinPoint, long executionTime, Object result) {
+        String completeSignature = joinPoint.getStaticPart().getSignature().toLongString();
+        String methodSignature = getMethodSignature(joinPoint);
+        if (!completeSignature.contains("void")) {
+            logger.trace("{} finished, took {} ms and returned {}", methodSignature, executionTime, result);
+            return;
+        }
+        logger.trace("{} finished and took {} ms", methodSignature, executionTime);
+    }
+
+    private String getMethodSignature(ProceedingJoinPoint joinPoint) {
+        return joinPoint.getSignature().getName() + "()";
     }
 }
