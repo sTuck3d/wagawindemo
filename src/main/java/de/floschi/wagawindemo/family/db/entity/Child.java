@@ -33,7 +33,7 @@ public class Child {
     @Enumerated(EnumType.STRING)
     private ChildType type;
 
-    @Column(name = "favColor")
+    @Column(name = "fav_color")
     private String favColor;
 
     @ManyToMany

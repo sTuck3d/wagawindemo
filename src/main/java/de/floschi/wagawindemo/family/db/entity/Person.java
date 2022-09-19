@@ -6,7 +6,9 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "person")
+@Table(name = "person", indexes = {
+        @Index(name = "parent_id_idx", columnList = "person_id")
+})
 @Data
 @EqualsAndHashCode(exclude = {"children", "house"})
 @ToString(exclude = {"children", "house"})
@@ -27,9 +29,9 @@ public class Person {
     private int age;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "house_id", referencedColumnName = "house_id")
     private House house;
 
-    @OneToMany(mappedBy = "parent")
+    @OneToMany
+    @JoinColumn(name = "parent_person_id")
     private List<Child> children;
 }

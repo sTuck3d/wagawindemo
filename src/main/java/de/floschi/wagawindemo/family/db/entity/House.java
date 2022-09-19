@@ -6,7 +6,8 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "house")
+@Table(name = "house", indexes = {
+        @Index(columnList = "person_id", name = "house_person_idx")})
 @Getter
 @Setter
 @AllArgsConstructor
@@ -22,13 +23,14 @@ public class House {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "zipCode")
+    @Column(name = "zip_code")
     private String zipCode;
 
     @Column(name = "type")
     @Enumerated(EnumType.STRING)
     private HouseType type;
 
-    @OneToOne(mappedBy = "house", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "person_id", referencedColumnName = "person_id")
     private Person person;
 }
