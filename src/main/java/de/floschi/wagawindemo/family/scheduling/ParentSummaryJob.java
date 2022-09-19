@@ -4,8 +4,10 @@ package de.floschi.wagawindemo.family.scheduling;
 import de.floschi.wagawindemo.family.service.ParentSummaryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
 
 
+@Component
 public class ParentSummaryJob {
 
     @Autowired
