@@ -19,9 +19,9 @@ public class ChildColorService {
 
     /**
      * loads the favorite color of a child. For sons the favorite color is the bicycleColor,
-     * for daugthers the haircolor.
+     * for daughters the haircolor.
      *
-     * @param id of the hhild for which the favorite color is requested
+     * @param id of the child for which the favorite color is requested
      * @return {@link ChildBicycleColorResponse} or {@link ChildHairColorResponse}.
      */
     @LogMethod
