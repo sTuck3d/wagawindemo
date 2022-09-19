@@ -4,17 +4,13 @@ import de.floschi.wagawindemo.family.data.response.ChildBicycleColorResponse;
 import de.floschi.wagawindemo.family.data.response.ChildHairColorResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.jdbc.Sql;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-@SpringBootTest
-@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 @Sql(scripts = {"/testdata/child-color-test-data.sql"})
-class ChildColorServiceTest {
+class ChildColorServiceTest extends ServiceTestBase {
 
     @Autowired
     private ChildColorService childColorService;
