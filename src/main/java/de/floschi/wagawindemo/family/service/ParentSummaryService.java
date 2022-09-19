@@ -5,6 +5,7 @@ import de.floschi.wagawindemo.family.data.response.ParentSummaryResponse;
 import de.floschi.wagawindemo.family.db.dao.ParentSummaryDao;
 import de.floschi.wagawindemo.family.db.dao.PersonDao;
 import de.floschi.wagawindemo.family.db.entity.ParentSummary;
+import de.floschi.wagawindemo.family.util.LogMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,7 @@ public class ParentSummaryService {
     @Autowired
     private ParentSummaryResponseMapper parentSummaryMapper;
 
+    @LogMethod
     public ParentSummaryResponse loadParentSummary() {
         var allParentSummaries = parentSummaryDao.findAll(Sort.by(Sort.Direction.ASC, "amountOfChildren"));
         return parentSummaryMapper.parentSummariesToResponse(allParentSummaries);
@@ -34,6 +36,7 @@ public class ParentSummaryService {
      * number of children.
      */
     @Transactional
+    @LogMethod
     public void calcParentSummary() {
         int maxNumberOfChildren = personDao.getMaxNumberOfChildren();
         for (int amountOfChildren = 0; amountOfChildren <= maxNumberOfChildren; amountOfChildren++) {
