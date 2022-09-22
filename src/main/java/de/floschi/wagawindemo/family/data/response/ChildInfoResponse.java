@@ -1,7 +1,7 @@
 package de.floschi.wagawindemo.family.data.response;
 
-import de.floschi.wagawindemo.family.data.MealDto;
-import de.floschi.wagawindemo.family.data.PersonDto;
+import de.floschi.wagawindemo.family.data.dto.MealDto;
+import de.floschi.wagawindemo.family.data.dto.PersonDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package de.floschi.wagawindemo.family.util;
+package de.floschi.wagawindemo.family.logging;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

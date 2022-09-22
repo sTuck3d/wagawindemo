@@ -1,6 +1,6 @@
 package de.floschi.wagawindemo.family.service;
 
-import de.floschi.wagawindemo.family.data.HouseType;
+import de.floschi.wagawindemo.family.db.enums.HouseType;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.jdbc.Sql;

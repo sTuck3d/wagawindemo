@@ -1,6 +1,6 @@
 package de.floschi.wagawindemo.family.data.mapper;
 
-import de.floschi.wagawindemo.family.data.HouseDto;
+import de.floschi.wagawindemo.family.data.dto.HouseDto;
 import de.floschi.wagawindemo.family.data.response.HouseResponse;
 import de.floschi.wagawindemo.family.db.entity.House;
 import de.floschi.wagawindemo.family.db.entity.Person;

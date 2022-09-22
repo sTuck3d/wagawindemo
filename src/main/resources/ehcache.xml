@@ -11,7 +11,7 @@
 
         <listeners>
             <listener>
-                <class>de.floschi.wagawindemo.family.util.ChildInfoCacheLogger</class>
+                <class>de.floschi.wagawindemo.family.logging.ChildInfoCacheLogger</class>
                 <event-firing-mode>ASYNCHRONOUS</event-firing-mode>
                 <event-ordering-mode>UNORDERED</event-ordering-mode>
                 <events-to-fire-on>CREATED</events-to-fire-on>
@@ -32,7 +32,7 @@
 
         <listeners>
             <listener>
-                <class>de.floschi.wagawindemo.family.util.HouseCacheLogger</class>
+                <class>de.floschi.wagawindemo.family.logging.HouseCacheLogger</class>
                 <event-firing-mode>ASYNCHRONOUS</event-firing-mode>
                 <event-ordering-mode>UNORDERED</event-ordering-mode>
                 <events-to-fire-on>CREATED</events-to-fire-on>
@@ -53,7 +53,7 @@
 
         <listeners>
             <listener>
-                <class>de.floschi.wagawindemo.family.util.ParentSummaryCacheLogger</class>
+                <class>de.floschi.wagawindemo.family.logging.ParentSummaryCacheLogger</class>
                 <event-firing-mode>ASYNCHRONOUS</event-firing-mode>
                 <event-ordering-mode>UNORDERED</event-ordering-mode>
                 <events-to-fire-on>CREATED</events-to-fire-on>
@@ -75,7 +75,7 @@
 
         <listeners>
             <listener>
-                <class>de.floschi.wagawindemo.family.util.ChildColorCacheLogger</class>
+                <class>de.floschi.wagawindemo.family.logging.ChildColorCacheLogger</class>
                 <event-firing-mode>ASYNCHRONOUS</event-firing-mode>
                 <event-ordering-mode>UNORDERED</event-ordering-mode>
                 <events-to-fire-on>CREATED</events-to-fire-on>

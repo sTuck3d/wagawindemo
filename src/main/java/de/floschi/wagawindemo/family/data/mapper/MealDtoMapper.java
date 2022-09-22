@@ -1,6 +1,6 @@
 package de.floschi.wagawindemo.family.data.mapper;
 
-import de.floschi.wagawindemo.family.data.MealDto;
+import de.floschi.wagawindemo.family.data.dto.MealDto;
 import de.floschi.wagawindemo.family.db.entity.Meal;
 import org.mapstruct.IterableMapping;
 import org.mapstruct.Mapper;

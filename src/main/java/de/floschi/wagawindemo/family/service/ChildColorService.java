@@ -5,12 +5,12 @@ import de.floschi.wagawindemo.family.data.response.ChildColorResponse;
 import de.floschi.wagawindemo.family.data.response.ChildHairColorResponse;
 import de.floschi.wagawindemo.family.db.dao.ChildDao;
 import de.floschi.wagawindemo.family.db.entity.Child;
-import de.floschi.wagawindemo.family.util.LogMethod;
+import de.floschi.wagawindemo.family.logging.LogMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import static de.floschi.wagawindemo.family.data.ChildType.SON;
+import static de.floschi.wagawindemo.family.db.enums.ChildType.SON;
 
 @Service
 public class ChildColorService {

@@ -5,7 +5,7 @@ import de.floschi.wagawindemo.family.data.response.ParentSummaryResponse;
 import de.floschi.wagawindemo.family.db.dao.ParentSummaryDao;
 import de.floschi.wagawindemo.family.db.dao.PersonDao;
 import de.floschi.wagawindemo.family.db.entity.ParentSummary;
-import de.floschi.wagawindemo.family.util.LogMethod;
+import de.floschi.wagawindemo.family.logging.LogMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Sort;

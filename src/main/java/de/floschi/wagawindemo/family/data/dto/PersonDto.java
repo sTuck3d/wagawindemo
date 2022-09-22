@@ -1,4 +1,4 @@
-package de.floschi.wagawindemo.family.data;
+package de.floschi.wagawindemo.family.data.dto;
 
 import lombok.Builder;
 import lombok.Data;

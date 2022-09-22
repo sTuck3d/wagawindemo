@@ -1,13 +1,13 @@
-package de.floschi.wagawindemo.family.util;
+package de.floschi.wagawindemo.family.logging;
 
 import org.ehcache.event.CacheEvent;
 import org.ehcache.event.CacheEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class HouseCacheLogger implements CacheEventListener<Object, Object> {
+public class ChildInfoCacheLogger implements CacheEventListener<Object, Object> {
 
-    Logger logger = LoggerFactory.getLogger(HouseCacheLogger.class);
+    Logger logger = LoggerFactory.getLogger(ChildInfoCacheLogger.class);
 
     @Override
     public void onEvent(

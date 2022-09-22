@@ -3,7 +3,7 @@ package de.floschi.wagawindemo.family.service;
 import de.floschi.wagawindemo.family.data.mapper.HouseDtoMapper;
 import de.floschi.wagawindemo.family.data.response.HouseResponse;
 import de.floschi.wagawindemo.family.db.dao.HouseDao;
-import de.floschi.wagawindemo.family.util.LogMethod;
+import de.floschi.wagawindemo.family.logging.LogMethod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;

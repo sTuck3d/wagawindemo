@@ -1,4 +1,4 @@
-package de.floschi.wagawindemo.family.util;
+package de.floschi.wagawindemo.family.logging;
 
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 public class LogMethodAspect {
 
 
-    @Around("@annotation(LogMethod)")
+    @Around("@annotation(de.floschi.wagawindemo.family.logging.LogMethod)")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         Logger logger = LoggerFactory.getLogger(joinPoint.getTarget().getClass());
 

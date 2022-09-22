@@ -1,6 +1,6 @@
 package de.floschi.wagawindemo.family.data.requests;
 
-import de.floschi.wagawindemo.family.data.HouseDto;
+import de.floschi.wagawindemo.family.data.dto.HouseDto;
 import lombok.Data;
 
 import java.io.Serializable;

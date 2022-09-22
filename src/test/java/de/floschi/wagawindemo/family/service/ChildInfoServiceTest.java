@@ -1,6 +1,6 @@
 package de.floschi.wagawindemo.family.service;
 
-import de.floschi.wagawindemo.family.data.MealDto;
+import de.floschi.wagawindemo.family.data.dto.MealDto;
 import de.floschi.wagawindemo.family.data.response.ChildInfoResponse;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

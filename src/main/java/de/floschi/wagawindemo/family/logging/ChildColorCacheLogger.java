@@ -1,4 +1,4 @@
-package de.floschi.wagawindemo.family.util;
+package de.floschi.wagawindemo.family.logging;
 
 import org.ehcache.event.CacheEvent;
 import org.ehcache.event.CacheEventListener;

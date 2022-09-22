@@ -1,6 +1,6 @@
 package de.floschi.wagawindemo.family.db.entity;
 
-import de.floschi.wagawindemo.family.data.ChildType;
+import de.floschi.wagawindemo.family.db.enums.ChildType;
 import lombok.*;
 
 import javax.persistence.*;
