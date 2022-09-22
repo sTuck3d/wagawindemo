@@ -7,6 +7,7 @@ import de.floschi.wagawindemo.family.db.dao.ChildDao;
 import de.floschi.wagawindemo.family.db.entity.Child;
 import de.floschi.wagawindemo.family.util.LogMethod;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import static de.floschi.wagawindemo.family.data.ChildType.SON;
@@ -25,6 +26,7 @@ public class ChildColorService {
      * @return {@link ChildBicycleColorResponse} or {@link ChildHairColorResponse}.
      */
     @LogMethod
+    @Cacheable(value = "childColorCache", key = "#id")
     public ChildColorResponse loadChildFavColor(Long id) {
         return childDao.findById(id)
                 .map(this::getFavoriteColorResponse)
