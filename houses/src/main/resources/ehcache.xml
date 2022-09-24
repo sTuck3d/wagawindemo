@@ -1,0 +1,26 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.ehcache.org/v3"
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd">
+
+    <cache alias="houseCache">
+        <key-type>java.lang.Long</key-type>
+        <value-type>de.floschi.wagawindemo.house.data.response.HouseResponse</value-type>
+        <expiry>
+            <ttl>60</ttl>
+        </expiry>
+
+        <listeners>
+            <listener>
+                <class>de.floschi.wagawindemo.house.logging.HouseCacheLogger</class>
+                <event-firing-mode>ASYNCHRONOUS</event-firing-mode>
+                <event-ordering-mode>UNORDERED</event-ordering-mode>
+                <events-to-fire-on>CREATED</events-to-fire-on>
+                <events-to-fire-on>EXPIRED</events-to-fire-on>
+            </listener>
+        </listeners>
+
+        <resources>
+            <offheap unit="MB">300</offheap>
+        </resources>
+    </cache>
+</config>
