@@ -1,6 +1,0 @@
-rootProject.name = 'wagawindemo'
-include 'childs'
-include 'parentsummary'
-include 'houses'
-include 'family-shared'
-
