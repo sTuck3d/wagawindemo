@@ -1,6 +1,6 @@
 package de.floschi.wagawindemo.house.service;
 
-import de.floschi.wagawinddemo.shared.logging.LogMethod;
+import de.floschi.wagawindemo.shared.logging.LogMethod;
 import de.floschi.wagawindemo.house.data.mapper.HouseDtoMapper;
 import de.floschi.wagawindemo.house.data.response.HouseResponse;
 import de.floschi.wagawindemo.house.db.dao.HouseDao;

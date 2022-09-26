@@ -7,8 +7,4 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface ParentSummaryDao extends JpaRepository<ParentSummary, Long> {
-
-    Optional<ParentSummary> findByAmountOfChildren(int numberOfChildren);
-
-}
+public interface ParentSummaryDao extends JpaRepository<ParentSummary, Long> {}

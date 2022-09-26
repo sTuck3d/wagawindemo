@@ -1,4 +1,4 @@
-package de.floschi.wagawindemo.parentsummary.config;
+package de.floschi.wagawindemo.parentsummaryjob.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;

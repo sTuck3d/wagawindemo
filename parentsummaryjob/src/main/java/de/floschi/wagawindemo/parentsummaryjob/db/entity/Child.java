@@ -1,4 +1,4 @@
-package de.floschi.wagawindemo.parentsummary.db.entity;
+package de.floschi.wagawindemo.parentsummaryjob.db.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

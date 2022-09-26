@@ -1,0 +1,2 @@
+cd /family-shared
+./gradlew clean build

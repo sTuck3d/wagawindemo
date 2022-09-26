@@ -1,15 +1,17 @@
-package de.floschi.wagawindemo.parentsummary;
+package de.floschi.wagawindemo.parentsummaryjob;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"de.floschi.wagawindemo.*"})
-public class ParentSummaryApplication {
+public class ParentSummaryJobApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ParentSummaryApplication.class, args);
+        SpringApplication.run(ParentSummaryJobApplication.class, args);
     }
 
 }

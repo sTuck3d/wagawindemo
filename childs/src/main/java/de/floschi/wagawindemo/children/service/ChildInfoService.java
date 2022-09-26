@@ -1,6 +1,6 @@
 package de.floschi.wagawindemo.children.service;
 
-import de.floschi.wagawinddemo.shared.logging.LogMethod;
+import de.floschi.wagawindemo.shared.logging.LogMethod;
 import de.floschi.wagawindemo.children.data.mapper.ChildDtoMapper;
 import de.floschi.wagawindemo.children.data.response.ChildInfoResponse;
 import de.floschi.wagawindemo.children.db.dao.ChildDao;

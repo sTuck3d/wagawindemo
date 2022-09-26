@@ -1,4 +1,4 @@
-package de.floschi.wagawinddemo.shared.logging;
+package de.floschi.wagawindemo.shared.logging;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,6 +1,6 @@
 package de.floschi.wagawindemo.children.service;
 
-import de.floschi.wagawinddemo.shared.logging.LogMethod;
+import de.floschi.wagawindemo.shared.logging.LogMethod;
 import de.floschi.wagawindemo.children.data.response.ChildBicycleColorResponse;
 import de.floschi.wagawindemo.children.data.response.ChildColorResponse;
 import de.floschi.wagawindemo.children.data.response.ChildHairColorResponse;

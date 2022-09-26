@@ -1,6 +1,6 @@
-package de.floschi.wagawindemo.parentsummary.db.dao;
+package de.floschi.wagawindemo.parentsummaryjob.db.dao;
 
-import de.floschi.wagawindemo.parentsummary.db.entity.Person;
+import de.floschi.wagawindemo.parentsummaryjob.db.entity.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
