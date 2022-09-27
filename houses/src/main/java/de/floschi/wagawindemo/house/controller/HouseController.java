@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.Callable;
+
 @RestController
 @RequestMapping("house")
 public class HouseController {
@@ -16,8 +18,8 @@ public class HouseController {
     private HouseService houseService;
 
     @GetMapping("/{personId}")
-    public HouseResponse getPersonsHouse(@PathVariable Long personId) {
-        return houseService.loadHouseByPersonId(personId);
+    public Callable<HouseResponse> getPersonsHouse(@PathVariable Long personId) {
+        return () -> houseService.loadHouseByPersonId(personId);
     }
 
 

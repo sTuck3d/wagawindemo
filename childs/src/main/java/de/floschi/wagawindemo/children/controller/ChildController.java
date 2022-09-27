@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.Callable;
+
 @RestController
 @RequestMapping("child")
 public class ChildController {
@@ -21,13 +23,13 @@ public class ChildController {
     private ChildColorService childColorService;
 
     @GetMapping("/info/{childId}")
-    public ChildInfoResponse getChildInfo(@PathVariable Long childId) {
-        return childInfoService.loadChildInfo(childId);
+    public Callable<ChildInfoResponse> getChildInfo(@PathVariable Long childId) throws InterruptedException {
+        return () -> childInfoService.loadChildInfo(childId);
     }
 
     @GetMapping("/color/{childId}")
-    public ChildColorResponse getChildFavColor(@PathVariable Long childId) {
-        return childColorService.loadChildFavColor(childId);
+    public Callable<ChildColorResponse> getChildFavColor(@PathVariable Long childId) {
+        return () -> childColorService.loadChildFavColor(childId);
     }
 
 }

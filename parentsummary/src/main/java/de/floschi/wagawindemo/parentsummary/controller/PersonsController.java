@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.concurrent.Callable;
+
 @RestController
 @RequestMapping("persons")
 public class PersonsController {
@@ -15,7 +17,7 @@ public class PersonsController {
     private ParentSummaryService parentSummaryService;
 
     @GetMapping("/children")
-    public ParentSummaryResponse getChildInfo() {
-        return parentSummaryService.loadParentSummary();
+    public Callable<ParentSummaryResponse> getChildInfo() {
+        return () -> parentSummaryService.loadParentSummary();
     }
 }
