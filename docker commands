@@ -1,0 +1,5 @@
+sudo docker build --tag=childs:latest .
+sudo docker build --tag=parentsummary:latest .
+
+sudo docker run childs:latest -p8080:8080
+sudo docker run parentsummary:latest -p8080:8082

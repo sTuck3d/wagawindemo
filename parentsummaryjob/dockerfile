@@ -1,0 +1,4 @@
+FROM openjdk:17-alpine
+MAINTAINER de.floschi
+COPY build/libs/parentsummaryjob-1.0-SNAPSHOT.jar parentsummaryjob.jar
+ENTRYPOINT ["java","-jar","/parentsummaryjob.jar"]

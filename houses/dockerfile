@@ -1,0 +1,4 @@
+FROM openjdk:17-alpine
+MAINTAINER de.floschi
+COPY build/libs/houses-0.0.1-SNAPSHOT.jar houses.jar
+ENTRYPOINT ["java","-jar","/houses.jar"]

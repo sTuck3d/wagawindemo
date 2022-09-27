@@ -1,0 +1,4 @@
+FROM openjdk:17-alpine
+MAINTAINER de.floschi
+COPY build/libs/childs-0.0.1-SNAPSHOT.jar childs.jar
+ENTRYPOINT ["java","-jar","/childs.jar"]
